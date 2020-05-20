@@ -1,0 +1,37 @@
+{
+  "name": "react-native-dynamically-selected-picker",
+  "version": "1.0.0",
+  "description": "React Native Custom Picker for Android and IOS with onScroll change selected items",
+  "keywords": [
+    "ReactNative",
+    "OnSwipePicker",
+    "DynamicSelect",
+    "Selector",
+    "SelectPicker",
+    "OnSwipePicker",
+    "IosStyleAndroidPicker",
+    "IosAndroidPicker",
+    "OnScrollPicker",
+    "picker",
+    "swiper",
+    "OnScrollChangePicker"
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosog/react-native-dynamically-selected-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sosog/react-native-dynamically-selected-picker/issues"
+  },
+  "homepage": "https://github.com/sosog/react-native-dynamically-selected-picker#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react-native-linear-gradient": "^2.5.6"
+  },
+  "author": "Soso Gvritishvili <sosogvritishvili@gmail.com> (https://www.linkedin.com/in/soso-gvritishvili/)",
+  "license": "MIT"
+}
