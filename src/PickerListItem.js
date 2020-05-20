@@ -5,7 +5,7 @@ export default function PickerListItem({
   label,
   style,
   itemColor,
-  itemsColor,
+  allItemsColor,
   fontSize,
   fontFamily = 'Arial',
 }) {
@@ -14,7 +14,7 @@ export default function PickerListItem({
       <Text
         style={{
           fontSize: fontSize,
-          color: itemColor ? itemColor : itemsColor,
+          color: itemColor ? itemColor : allItemsColor,
           fontFamily: fontFamily,
         }}>
         {label}

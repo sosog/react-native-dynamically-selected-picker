@@ -88,7 +88,7 @@ export default class DynamicallySelectedPicker extends React.Component {
       topGradientColors,
       bottomGradientColors,
       transparentItemRows,
-      itemsColor,
+      allItemsColor,
       fontSize,
       fontFamily,
       selectedItemBorderColor,
@@ -116,7 +116,7 @@ export default class DynamicallySelectedPicker extends React.Component {
                 key={index}
                 label={item.label}
                 itemColor={item.itemColor}
-                itemsColor={itemsColor}
+                allItemsColor={allItemsColor}
                 fontSize={fontSize ? fontSize : itemHeight / 2}
                 fontFamily={fontFamily}
                 style={[
@@ -173,15 +173,15 @@ export default class DynamicallySelectedPicker extends React.Component {
 }
 
 DynamicallySelectedPicker.defaultProps = {
-  items: [{value: 0, label: 'No items'}],
+  items: [{value: 0, label: 'No items', itemColor: 'red'}],
   onScrollDynamicallyChange: () => {},
   onScrollBegin: () => {},
   onScrollEnd: () => {},
-  width: 200,
-  height: 200,
+  width: 400,
+  height: 400,
   initialSelectedIndex: 0,
   transparentItemRows: 3,
-  itemsColor: '#000',
+  allItemsColor: '#000',
   fontFamily: 'Arial',
   selectedItemBorderColor: '#cecece',
   topGradientColors: [
@@ -212,7 +212,7 @@ DynamicallySelectedPicker.propTypes = {
   initialSelectedIndex: PropTypes.number,
   height: PropTypes.number,
   width: PropTypes.number,
-  itemsColor: PropTypes.string,
+  allItemsColor: PropTypes.string,
   selectedItemBorderColor: PropTypes.string,
   fontSize: PropTypes.number,
   fontFamily: PropTypes.string,
