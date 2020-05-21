@@ -3,18 +3,18 @@
   "version": "1.0.2",
   "description": "React Native Custom Picker for Android and IOS with onScroll change selected items",
   "keywords": [
-    "ReactNative",
-    "OnSwipePicker",
-    "DynamicSelect",
-    "Selector",
-    "SelectPicker",
-    "OnSwipePicker",
-    "IosStyleAndroidPicker",
-    "IosAndroidPicker",
-    "OnScrollPicker",
+    "react-native",
+    "swipe-picker",
+    "dynamic-select",
+    "selector",
+    "select-picker",
+    "ios-style-android-picker",
+    "ios-android-picker",
+    "on-scroll-select",
     "picker",
     "swiper",
-    "OnScrollChangePicker"
+    "scroll-change-picker",
+    "ios-android-select"
   ],
   "main": "src/index.js",
   "scripts": {
