@@ -1,6 +1,9 @@
 # react-native-dynamically-selected-picker
 
 React Native Picker for Android and IOS with dynamically updating selected items on scroll.
+Idea was taken at [react-native-swipe-picker]( https://github.com/ninio/react-native-swipe-picker
+)
+
 
 ![](README/android.gif)
 ![](README/ios.gif)
@@ -12,6 +15,8 @@ React Native Picker for Android and IOS with dynamically updating selected items
 or
 
 `npm i react-native-dynamically-selected-picker react-native-linear-gradient --safe`
+
+Then, if you didn't install `react-native-linear-gradient` before: Enter command `cd /ios` and `pod install`. Now you can run project
 
 #Basic usage
 

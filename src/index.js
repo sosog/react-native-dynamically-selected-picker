@@ -1,14 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View, ScrollView} from 'react-native';
+import {StyleSheet, View, ScrollView, Platform} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PickerListItem from './PickerListItem';
 
 export default class DynamicallySelectedPicker extends React.Component {
-  state = {
-    itemHeight: this.props.height / (this.props.transparentItemRows * 2 + 1),
-    itemIndex: this.props.initialSelectedIndex,
-  };
+  constructor(props) {
+    super(props);
+
+    let itemHeight =
+      this.props.height / (this.props.transparentItemRows * 2 + 1);
+    if (Platform.OS === 'ios') {
+      itemHeight = Math.ceil(itemHeight);
+    }
+
+    this.state = {
+      itemHeight: itemHeight,
+      itemIndex: this.props.initialSelectedIndex,
+    };
+  }
 
   fakeItems(n = 3) {
     const itemsArr = [];
@@ -28,7 +38,6 @@ export default class DynamicallySelectedPicker extends React.Component {
   onScroll(event) {
     const {items, onScrollDynamicallyChange} = this.props;
     const tempIndex = this.getItemTemporaryIndex(event);
-
     if (
       this.state.itemIndex !== tempIndex &&
       tempIndex >= 0 &&
