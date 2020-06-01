@@ -21,31 +21,62 @@ Then, if you didn't install `react-native-linear-gradient` before: Enter command
 #Basic usage
 
 ```
+import React from 'react';
+import {View, Text, Dimensions} from 'react-native';
+
 import DynamicallySelectedPicker from 'react-native-dynamically-selected-picker';
 
-<DynamicallySelectedPicker
-  items={[
-    {
-      value: 1,
-      label: 'Item 1',
-      itemColor: 'red'
-    },
-    {
-      value: 2,
-      label: 'Item 2',
-      itemColor: 'green'
-    },
-    {
-      value: 3,
-      label: 'Item 3',
-    },
-  ]}
-  onScrollDynamicallyChange={({index, item}) => {
+export default class Example extends React.Component {
+  state = {
+    selectedItemIndex: 0,
+  };
+
+  updateSelectedItem(index) {
     this.setState({selectedItemIndex: index});
-  }}
-  height={300}
-  width={300}
-/>
+  }
+
+  render() {
+    const windowWidth = Dimensions.get('window').width;
+
+    return (
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <DynamicallySelectedPicker
+          items={[
+            {
+              value: 1,
+              label: 'Item 1',
+            },
+            {
+              value: 2,
+              label: 'Item 2',
+            },
+            {
+              value: 3,
+              label: 'Item 3',
+            },
+            {
+              value: 4,
+              label: 'Item 4',
+            },
+            {
+              value: 5,
+              label: 'Item 5',
+            },
+          ]}
+          onScroll={({index, item}) => {
+            this.updateSelectedItem(index);
+          }}
+          height={300}
+          width={windowWidth}
+        />
+        <View style={{marginTop: 50}}>
+          <Text>Selected item index {this.state.selectedItemIndex}</Text>
+        </View>
+      </View>
+    );
+  }
+}
+
 ```
 
 ## Properties
@@ -53,9 +84,11 @@ import DynamicallySelectedPicker from 'react-native-dynamically-selected-picker'
 | Prop           |     Default     |   Type   | Description                                                                                                 |
 | :------------- | :-------------: | :------: | :---------------------------------------------------------------------------------------------------------- |
 | items     |     [{value: 0, label: 'No items', itemColor: 'red'}]       |  `Array<object>` | - |
-| onScrollDynamicallyChange     |      -       |  `func` | Returns selected item object and selected index  |
-| onScrollBegin     |      -       |  `func` | Returns selected item object and selected index  |
-| onScrollEnd     |      -       |  `func` | Returns selected item object and selected index  |
+| onScroll     |      -       |  `func` | Returns selected item object and selected index  |
+| onMomentumScrollBegin     |      -       |  `func` | Returns selected item object and selected index  |
+| onMomentumScrollEnd     |      -       |  `func` | Returns selected item object and selected index  |
+| onScrollBeginDrag     |      -       |  `func` | Returns selected item object and selected index  |
+| onScrollEndDrag     |      -       |  `func` | Returns selected item object and selected index  |
 | initialSelectedIndex          |        0        | `number` | Set index number of initial item.                                                                              |
 | transparentItemRows   |     2      |  `number`  | Set number of items at top and bottom of selected index.                                                                |
 | width   |     300      |  `number`  | -                                                                |

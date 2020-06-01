@@ -36,7 +36,7 @@ export default class DynamicallySelectedPicker extends React.Component {
   }
 
   onScroll(event) {
-    const {items, onScrollDynamicallyChange} = this.props;
+    const {items, onScroll} = this.props;
     const tempIndex = this.getItemTemporaryIndex(event);
     if (
       this.state.itemIndex !== tempIndex &&
@@ -44,27 +44,47 @@ export default class DynamicallySelectedPicker extends React.Component {
       tempIndex < this.allItemsLength()
     ) {
       this.setItemIndex(tempIndex);
-      onScrollDynamicallyChange({index: tempIndex, item: items[tempIndex]});
+      onScroll({index: tempIndex, item: items[tempIndex]});
     }
   }
 
-  onScrollBegin(event) {
-    const {items, onScrollBegin} = this.props;
+  onMomentumScrollBegin(event) {
+    const {items, onMomentumScrollBegin} = this.props;
     const tempIndex = this.getItemTemporaryIndex(event);
 
     if (tempIndex >= 0 && tempIndex < this.allItemsLength()) {
       this.setItemIndex(tempIndex);
-      onScrollBegin({index: tempIndex, item: items[tempIndex]});
+      onMomentumScrollBegin({index: tempIndex, item: items[tempIndex]});
     }
   }
 
-  onScrollEnd(event) {
-    const {items, onScrollEnd} = this.props;
+  onMomentumScrollEnd(event) {
+    const {items, onMomentumScrollEnd} = this.props;
     const tempIndex = this.getItemTemporaryIndex(event);
 
     if (tempIndex >= 0 && tempIndex < this.allItemsLength()) {
       this.setItemIndex(tempIndex);
-      onScrollEnd({index: tempIndex, item: items[tempIndex]});
+      onMomentumScrollEnd({index: tempIndex, item: items[tempIndex]});
+    }
+  }
+
+  onScrollBeginDrag(event) {
+    const {items, onScrollBeginDrag} = this.props;
+    const tempIndex = this.getItemTemporaryIndex(event);
+
+    if (tempIndex >= 0 && tempIndex < this.allItemsLength()) {
+      this.setItemIndex(tempIndex);
+      onScrollBeginDrag({index: tempIndex, item: items[tempIndex]});
+    }
+  }
+
+  onScrollEndDrag(event) {
+    const {items, onScrollEndDrag} = this.props;
+    const tempIndex = this.getItemTemporaryIndex(event);
+
+    if (tempIndex >= 0 && tempIndex < this.allItemsLength()) {
+      this.setItemIndex(tempIndex);
+      onScrollEndDrag({index: tempIndex, item: items[tempIndex]});
     }
   }
 
@@ -108,10 +128,16 @@ export default class DynamicallySelectedPicker extends React.Component {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           onMomentumScrollBegin={(event) => {
-            this.onScrollBegin(event);
+            this.onMomentumScrollBegin(event);
           }}
           onMomentumScrollEnd={(event) => {
-            this.onScrollEnd(event);
+            this.onMomentumScrollEnd(event);
+          }}
+          onScrollBeginDrag={(event) => {
+            this.onScrollBeginDrag(event);
+          }}
+          onScrollEndDrag={(event) => {
+            this.onScrollEndDrag(event);
           }}
           onScroll={(event) => {
             this.onScroll(event);
@@ -183,9 +209,11 @@ export default class DynamicallySelectedPicker extends React.Component {
 
 DynamicallySelectedPicker.defaultProps = {
   items: [{value: 0, label: 'No items', itemColor: 'red'}],
-  onScrollDynamicallyChange: () => {},
-  onScrollBegin: () => {},
-  onScrollEnd: () => {},
+  onScroll: () => {},
+  onScrollBeginDrag: () => {},
+  onScrollEndDrag: () => {},
+  onMomentumScrollBegin: () => {},
+  onMomentumScrollEnd: () => {},
   width: 300,
   height: 300,
   initialSelectedIndex: 0,
@@ -215,9 +243,11 @@ DynamicallySelectedPicker.propTypes = {
       itemColor: PropTypes.string,
     }),
   ),
-  onScrollDynamicallyChange: PropTypes.func,
-  onScrollBegin: PropTypes.func,
-  onScrollEnd: PropTypes.func,
+  onScroll: PropTypes.func,
+  onMomentumScrollBegin: PropTypes.func,
+  onMomentumScrollEnd: PropTypes.func,
+  onScrollBeginDrag: PropTypes.func,
+  onScrollEndDrag: PropTypes.func,
   initialSelectedIndex: PropTypes.number,
   height: PropTypes.number,
   width: PropTypes.number,
