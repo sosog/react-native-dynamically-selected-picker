@@ -1,6 +1,6 @@
 {
   "name": "react-native-dynamically-selected-picker",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React Native Custom Picker for Android and IOS with onScroll change selected items",
   "keywords": [
     "react-native",

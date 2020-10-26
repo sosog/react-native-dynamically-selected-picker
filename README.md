@@ -96,6 +96,6 @@ export default class Example extends React.Component {
 | allItemsColor          |      #000       |  `string`  | - |
 | selectedItemBorderColor          |      '#cecece'       |  `string`  | - |
 | fontSize          |      -       |  `number`  | - |
-| fontFamily          |     'Arial       |  `string`  | - |
+| fontFamily          |     'Arial'       |  `string`  | - |
 | topGradientColors | [...] |  `Array<string>`  | See default value in source.                                                          
 | bottomGradientColors | [...] |  `Array<string>`  | See default value in source.                                                            |
