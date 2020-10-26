@@ -90,7 +90,7 @@ export default class Example extends React.Component {
 | onScrollBeginDrag     |      -       |  `func` | Returns selected item object and selected index  |
 | onScrollEndDrag     |      -       |  `func` | Returns selected item object and selected index  |
 | initialSelectedIndex          |        0        | `number` | Set index number of initial item.                                                                              |
-| transparentItemRows   |     2      |  `number`  | Set number of items at top and bottom of selected index.                                                                |
+| transparentItemRows   |     3      |  `number`  | Set number of items at top and bottom of selected index.                                                                |
 | width   |     300      |  `number`  | -                                                                |
 | height   |     300      |  `number`  | -                                                                |
 | allItemsColor          |      #000       |  `string`  | - |

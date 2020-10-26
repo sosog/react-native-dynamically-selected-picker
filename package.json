@@ -32,6 +32,7 @@
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.7.2",
+    "react-native-dynamically-selected-picker": "^2.0.0",
     "react-native-linear-gradient": "^2.5.6"
   }
 }

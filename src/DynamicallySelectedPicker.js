@@ -20,6 +20,12 @@ export default class DynamicallySelectedPicker extends React.Component {
     };
   }
 
+  scrollToInitialPosition = () => {
+    this.scrollViewRef.scrollTo({
+      y: this.state.itemHeight * this.props.initialSelectedIndex,
+    });
+  };
+
   fakeItems(n = 3) {
     const itemsArr = [];
     for (let i = 0; i < n; i++) {
@@ -125,6 +131,10 @@ export default class DynamicallySelectedPicker extends React.Component {
     return (
       <View style={{height: height, width: width}}>
         <ScrollView
+          ref={(ref) => {
+            this.scrollViewRef = ref;
+          }}
+          onLayout={this.scrollToInitialPosition}
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           onMomentumScrollBegin={(event) => {
