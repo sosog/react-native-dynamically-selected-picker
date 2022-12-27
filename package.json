@@ -1,6 +1,6 @@
 {
   "name": "react-native-dynamically-selected-picker",
-  "version": "0.1.0",
+  "version": "3.0.0",
   "description": "test",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
@@ -67,6 +67,7 @@
     "jest": "^28.1.1",
     "pod-install": "^0.1.0",
     "prettier": "^2.0.5",
+    "prop-types": "^15.8.1",
     "react": "18.1.0",
     "react-native": "0.70.6",
     "react-native-builder-bob": "^0.20.3",
@@ -151,5 +152,8 @@
       "module",
       "typescript"
     ]
+  },
+  "dependencies": {
+    "react-native-linear-gradient": "^2.6.2"
   }
 }

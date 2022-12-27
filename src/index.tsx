@@ -1,3 +1,5 @@
+export { DynamicallySelectedPickerList } from './DynamicallySelectedPickerList';
+export { DynamicallySelectedPickerListItem } from './DynamicallySelectedPickerListItem';
 import { NativeModules, Platform } from 'react-native';
 
 const LINKING_ERROR =
@@ -6,7 +8,7 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-const DynamicallySelectedPicker = NativeModules.DynamicallySelectedPicker
+export const DynamicallySelectedPicker = NativeModules.DynamicallySelectedPicker
   ? NativeModules.DynamicallySelectedPicker
   : new Proxy(
       {},
@@ -16,7 +18,3 @@ const DynamicallySelectedPicker = NativeModules.DynamicallySelectedPicker
         },
       }
     );
-
-export function multiply(a: number, b: number): Promise<number> {
-  return DynamicallySelectedPicker.multiply(a, b);
-}
