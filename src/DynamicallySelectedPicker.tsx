@@ -9,10 +9,10 @@ import {
   NativeSyntheticEvent,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { DynamicallySelectedPickerListItem } from './DynamicallySelectedPickerListItem';
+import DynamicallySelectedPickerListItem from './DynamicallySelectedPickerListItem';
 import type { ListItem, PickerListProps } from './types/pickerTypes';
 
-export function DynamicallySelectedPickerList({
+export default function DynamicallySelectedPicker({
   items = [{ value: 0, label: 'No items', itemColor: 'red' }],
   onScroll,
   onScrollBeginDrag,
@@ -152,7 +152,7 @@ export function DynamicallySelectedPickerList({
   };
 
   return (
-    <View style={{ height: height, width: width }}>
+    <View style={{ height, width }}>
       <ScrollView
         ref={scrollViewRef}
         onLayout={scrollToInitialPosition}

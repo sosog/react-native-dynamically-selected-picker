@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import type { PickerListItemProps } from './types/pickerTypes';
 
-export function DynamicallySelectedPickerListItem({
+export default function DynamicallySelectedPickerListItem({
   label,
   itemColor,
   allItemsColor,
