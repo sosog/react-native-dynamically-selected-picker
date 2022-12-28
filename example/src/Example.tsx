@@ -28,6 +28,7 @@ export default function Example() {
           {
             value: 4,
             label: 'Item 4',
+            itemColor: 'blue',
           },
           {
             value: 5,
