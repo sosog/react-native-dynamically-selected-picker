@@ -4,9 +4,9 @@ export type ListItem = {
   itemColor?: string;
 };
 
-export interface PickerListProps {
-  items: Array<ListItem>;
-  onScroll: ({ index }: { index: number }) => void;
+export interface PickerProps {
+  items?: Array<ListItem>;
+  onScroll?: ({ index }: { index: number }) => void;
   onMomentumScrollBegin?: ({ index }: { index: number }) => void;
   onMomentumScrollEnd?: ({ index }: { index: number }) => void;
   onScrollBeginDrag?: ({ index }: { index: number }) => void;

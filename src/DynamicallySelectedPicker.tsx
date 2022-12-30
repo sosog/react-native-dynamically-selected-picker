@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import DynamicallySelectedPickerListItem from './DynamicallySelectedPickerListItem';
-import type { ListItem, PickerListProps } from './types/pickerTypes';
+import type { ListItem, PickerProps } from './types/pickerTypes';
 
 export default function DynamicallySelectedPicker({
   items = [{ value: 0, label: 'No items', itemColor: 'red' }],
@@ -39,7 +39,7 @@ export default function DynamicallySelectedPicker({
     'rgba( 255, 255, 255, 0.9 )',
     'rgba( 255, 255, 255, 1 )',
   ],
-}: PickerListProps) {
+}: PickerProps) {
   let itemHeightInitial = height / (transparentItemRows * 2 + 1);
   if (Platform.OS === 'ios') {
     itemHeightInitial = Math.ceil(itemHeightInitial);
@@ -71,10 +71,12 @@ export default function DynamicallySelectedPicker({
   }
 
   function onScrollListener(event: NativeSyntheticEvent<NativeScrollEvent>) {
-    const index = getItemIndex(event);
-    if (itemIndex !== index && index >= 0 && index < allItemsLength()) {
-      setItemIndex(index);
-      onScroll({ index });
+    if(onScroll != null) {
+      const index = getItemIndex(event);
+      if (itemIndex !== index && index >= 0 && index < allItemsLength()) {
+        setItemIndex(index);
+        onScroll({ index });
+      }
     }
   }
 

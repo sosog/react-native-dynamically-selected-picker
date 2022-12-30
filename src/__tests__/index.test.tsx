@@ -12,7 +12,14 @@ it('Components renders correctly with defaults', () => {
   expect(DynamicallySelectedPickerWrapper).toMatchSnapshot();
 
   const DynamicallySelectedPickerListItemWrapper = renderer
-    .create(<DynamicallySelectedPickerListItem/>)
+    .create(<DynamicallySelectedPickerListItem
+      label={"Item"}
+      itemColor={"white"}
+      allItemsColor={"black"}
+      fontSize={14}
+      height={30}
+      fontFamily={"Georgia"}
+    />)
     .toJSON();
   expect(DynamicallySelectedPickerListItemWrapper).toMatchSnapshot();
 });
