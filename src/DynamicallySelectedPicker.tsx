@@ -71,7 +71,7 @@ export default function DynamicallySelectedPicker({
   }
 
   function onScrollListener(event: NativeSyntheticEvent<NativeScrollEvent>) {
-    if(onScroll != null) {
+    if (onScroll != null) {
       const index = getItemIndex(event);
       if (itemIndex !== index && index >= 0 && index < allItemsLength()) {
         setItemIndex(index);
