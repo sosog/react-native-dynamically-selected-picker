@@ -1,0 +1,617 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components renders correctly with defaults 1`] = `
+<View
+  style={
+    Object {
+      "height": 300,
+      "width": 300,
+    }
+  }
+>
+  <RCTScrollView
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    scrollEventThrottle={20}
+    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
+    snapToInterval={43}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "red",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        >
+          No items
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    pointerEvents="none"
+    style={
+      Array [
+        Object {
+          "position": "absolute",
+          "width": "100%",
+        },
+        Object {
+          "borderBottomColor": "#cecece",
+          "borderBottomWidth": 1,
+          "top": 1,
+        },
+      ]
+    }
+  >
+    <BVLinearGradient
+      colors={
+        Array [
+          4294967295,
+          3875536895,
+          3019898879,
+          2164260863,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Array [
+          Object {
+            "width": "100%",
+          },
+          Object {
+            "height": 129,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    pointerEvents="none"
+    style={
+      Array [
+        Object {
+          "position": "absolute",
+          "width": "100%",
+        },
+        Object {
+          "borderTopColor": "#cecece",
+          "borderTopWidth": 1,
+          "bottom": 0,
+        },
+      ]
+    }
+  >
+    <BVLinearGradient
+      colors={
+        Array [
+          2164260863,
+          3019898879,
+          3875536895,
+          4294967295,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Array [
+          Object {
+            "width": "100%",
+          },
+          Object {
+            "height": 129,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Components renders correctly with defaults 2`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "height": undefined,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": undefined,
+        "fontFamily": "Arial",
+        "fontSize": undefined,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Components renders correctly with updated params 1`] = `
+<View
+  style={
+    Object {
+      "height": 400,
+      "width": 400,
+    }
+  }
+>
+  <RCTScrollView
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    scrollEventThrottle={20}
+    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
+    snapToInterval={80}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 80,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "blue",
+              "fontFamily": "Arial",
+              "fontSize": 18,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 80,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "blue",
+              "fontFamily": "Arial",
+              "fontSize": 18,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 80,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "blue",
+              "fontFamily": "Arial",
+              "fontSize": 18,
+            }
+          }
+        >
+          Item 1
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 80,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "blue",
+              "fontFamily": "Arial",
+              "fontSize": 18,
+            }
+          }
+        >
+          Item 2
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 80,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "blue",
+              "fontFamily": "Arial",
+              "fontSize": 18,
+            }
+          }
+        >
+          Item 3
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 80,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "blue",
+              "fontFamily": "Arial",
+              "fontSize": 18,
+            }
+          }
+        >
+          Item 4
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 80,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "blue",
+              "fontFamily": "Arial",
+              "fontSize": 18,
+            }
+          }
+        >
+          Item 5
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 80,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "blue",
+              "fontFamily": "Arial",
+              "fontSize": 18,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 80,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "blue",
+              "fontFamily": "Arial",
+              "fontSize": 18,
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    pointerEvents="none"
+    style={
+      Array [
+        Object {
+          "position": "absolute",
+          "width": "100%",
+        },
+        Object {
+          "borderBottomColor": "gray",
+          "borderBottomWidth": 1,
+          "top": 1,
+        },
+      ]
+    }
+  >
+    <BVLinearGradient
+      colors={
+        Array [
+          4294967295,
+          3875536895,
+          3019898879,
+          2164260863,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Array [
+          Object {
+            "width": "100%",
+          },
+          Object {
+            "height": 160,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    pointerEvents="none"
+    style={
+      Array [
+        Object {
+          "position": "absolute",
+          "width": "100%",
+        },
+        Object {
+          "borderTopColor": "gray",
+          "borderTopWidth": 1,
+          "bottom": 0,
+        },
+      ]
+    }
+  >
+    <BVLinearGradient
+      colors={
+        Array [
+          2164260863,
+          3019898879,
+          3875536895,
+          4294967295,
+        ]
+      }
+      endPoint={
+        Object {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={null}
+      startPoint={
+        Object {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        Array [
+          Object {
+            "width": "100%",
+          },
+          Object {
+            "height": 160,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Components renders correctly with updated params 2`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "height": 40,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "green",
+        "fontFamily": "Arial",
+        "fontSize": 22,
+      }
+    }
+  >
+    Item label
+  </Text>
+</View>
+`;
