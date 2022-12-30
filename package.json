@@ -39,7 +39,20 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "react-native",
+    "swipe-picker",
+    "dynamic-select",
+    "selector",
+    "select-picker",
+    "ios-style-android-picker",
+    "ios-android-picker",
+    "on-scroll-select",
+    "picker",
+    "swiper",
+    "scroll-change-picker",
+    "ios-android-select",
+    "typescript-support"
   ],
   "repository": "https://github.com/sosog/react-native-dynamically-selected-picker",
   "author": "sosog <sosogvritishvili@gmail.com> (https://github.com/sosog)",
