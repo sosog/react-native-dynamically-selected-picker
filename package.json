@@ -54,7 +54,10 @@
     "ios-android-select",
     "typescript-support"
   ],
-  "repository": "https://github.com/sosog/react-native-dynamically-selected-picker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosog/react-native-dynamically-selected-picker.git"
+  },
   "author": "sosog <sosogvritishvili@gmail.com> (https://github.com/sosog)",
   "license": "MIT",
   "bugs": {
@@ -170,6 +173,11 @@
     ]
   },
   "dependencies": {
+    "react-native-builder-bob": "^0.20.3",
     "react-native-linear-gradient": "^2.6.2"
+  },
+  "directories": {
+    "example": "example",
+    "lib": "lib"
   }
 }
