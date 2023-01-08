@@ -267,7 +267,7 @@ exports[`Components renders correctly with defaults 2`] = `
   style={
     Object {
       "alignItems": "center",
-      "height": undefined,
+      "height": 30,
       "justifyContent": "center",
     }
   }
@@ -275,12 +275,14 @@ exports[`Components renders correctly with defaults 2`] = `
   <Text
     style={
       Object {
-        "color": undefined,
-        "fontFamily": "Arial",
-        "fontSize": undefined,
+        "color": "white",
+        "fontFamily": "Georgia",
+        "fontSize": 14,
       }
     }
-  />
+  >
+    Item
+  </Text>
 </View>
 `;
 
