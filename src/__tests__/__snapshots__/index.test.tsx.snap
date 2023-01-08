@@ -3,7 +3,7 @@
 exports[`Components renders correctly with defaults 1`] = `
 <View
   style={
-    Object {
+    {
       "height": 300,
       "width": 300,
     }
@@ -24,7 +24,7 @@ exports[`Components renders correctly with defaults 1`] = `
     <View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 43,
             "justifyContent": "center",
@@ -33,7 +33,7 @@ exports[`Components renders correctly with defaults 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "#000",
               "fontFamily": "Arial",
               "fontSize": 21.5,
@@ -43,7 +43,7 @@ exports[`Components renders correctly with defaults 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 43,
             "justifyContent": "center",
@@ -52,7 +52,7 @@ exports[`Components renders correctly with defaults 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "#000",
               "fontFamily": "Arial",
               "fontSize": 21.5,
@@ -62,7 +62,7 @@ exports[`Components renders correctly with defaults 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 43,
             "justifyContent": "center",
@@ -71,7 +71,7 @@ exports[`Components renders correctly with defaults 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "#000",
               "fontFamily": "Arial",
               "fontSize": 21.5,
@@ -81,7 +81,7 @@ exports[`Components renders correctly with defaults 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 43,
             "justifyContent": "center",
@@ -90,7 +90,7 @@ exports[`Components renders correctly with defaults 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "red",
               "fontFamily": "Arial",
               "fontSize": 21.5,
@@ -102,7 +102,7 @@ exports[`Components renders correctly with defaults 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 43,
             "justifyContent": "center",
@@ -111,7 +111,7 @@ exports[`Components renders correctly with defaults 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "#000",
               "fontFamily": "Arial",
               "fontSize": 21.5,
@@ -121,7 +121,7 @@ exports[`Components renders correctly with defaults 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 43,
             "justifyContent": "center",
@@ -130,7 +130,7 @@ exports[`Components renders correctly with defaults 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "#000",
               "fontFamily": "Arial",
               "fontSize": 21.5,
@@ -140,7 +140,7 @@ exports[`Components renders correctly with defaults 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 43,
             "justifyContent": "center",
@@ -149,7 +149,7 @@ exports[`Components renders correctly with defaults 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "#000",
               "fontFamily": "Arial",
               "fontSize": 21.5,
@@ -162,12 +162,12 @@ exports[`Components renders correctly with defaults 1`] = `
   <View
     pointerEvents="none"
     style={
-      Array [
-        Object {
+      [
+        {
           "position": "absolute",
           "width": "100%",
         },
-        Object {
+        {
           "borderBottomColor": "#cecece",
           "borderBottomWidth": 1,
           "top": 1,
@@ -177,7 +177,7 @@ exports[`Components renders correctly with defaults 1`] = `
   >
     <BVLinearGradient
       colors={
-        Array [
+        [
           4294967295,
           3875536895,
           3019898879,
@@ -185,24 +185,24 @@ exports[`Components renders correctly with defaults 1`] = `
         ]
       }
       endPoint={
-        Object {
+        {
           "x": 0.5,
           "y": 1,
         }
       }
       locations={null}
       startPoint={
-        Object {
+        {
           "x": 0.5,
           "y": 0,
         }
       }
       style={
-        Array [
-          Object {
+        [
+          {
             "width": "100%",
           },
-          Object {
+          {
             "height": 129,
           },
         ]
@@ -212,12 +212,12 @@ exports[`Components renders correctly with defaults 1`] = `
   <View
     pointerEvents="none"
     style={
-      Array [
-        Object {
+      [
+        {
           "position": "absolute",
           "width": "100%",
         },
-        Object {
+        {
           "borderTopColor": "#cecece",
           "borderTopWidth": 1,
           "bottom": 0,
@@ -227,7 +227,7 @@ exports[`Components renders correctly with defaults 1`] = `
   >
     <BVLinearGradient
       colors={
-        Array [
+        [
           2164260863,
           3019898879,
           3875536895,
@@ -235,24 +235,24 @@ exports[`Components renders correctly with defaults 1`] = `
         ]
       }
       endPoint={
-        Object {
+        {
           "x": 0.5,
           "y": 1,
         }
       }
       locations={null}
       startPoint={
-        Object {
+        {
           "x": 0.5,
           "y": 0,
         }
       }
       style={
-        Array [
-          Object {
+        [
+          {
             "width": "100%",
           },
-          Object {
+          {
             "height": 129,
           },
         ]
@@ -265,7 +265,7 @@ exports[`Components renders correctly with defaults 1`] = `
 exports[`Components renders correctly with defaults 2`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "height": 30,
       "justifyContent": "center",
@@ -274,7 +274,7 @@ exports[`Components renders correctly with defaults 2`] = `
 >
   <Text
     style={
-      Object {
+      {
         "color": "white",
         "fontFamily": "Georgia",
         "fontSize": 14,
@@ -289,7 +289,7 @@ exports[`Components renders correctly with defaults 2`] = `
 exports[`Components renders correctly with updated params 1`] = `
 <View
   style={
-    Object {
+    {
       "height": 400,
       "width": 400,
     }
@@ -310,7 +310,7 @@ exports[`Components renders correctly with updated params 1`] = `
     <View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 80,
             "justifyContent": "center",
@@ -319,7 +319,7 @@ exports[`Components renders correctly with updated params 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "blue",
               "fontFamily": "Arial",
               "fontSize": 18,
@@ -329,7 +329,7 @@ exports[`Components renders correctly with updated params 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 80,
             "justifyContent": "center",
@@ -338,7 +338,7 @@ exports[`Components renders correctly with updated params 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "blue",
               "fontFamily": "Arial",
               "fontSize": 18,
@@ -348,7 +348,7 @@ exports[`Components renders correctly with updated params 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 80,
             "justifyContent": "center",
@@ -357,7 +357,7 @@ exports[`Components renders correctly with updated params 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "blue",
               "fontFamily": "Arial",
               "fontSize": 18,
@@ -369,7 +369,7 @@ exports[`Components renders correctly with updated params 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 80,
             "justifyContent": "center",
@@ -378,7 +378,7 @@ exports[`Components renders correctly with updated params 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "blue",
               "fontFamily": "Arial",
               "fontSize": 18,
@@ -390,7 +390,7 @@ exports[`Components renders correctly with updated params 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 80,
             "justifyContent": "center",
@@ -399,7 +399,7 @@ exports[`Components renders correctly with updated params 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "blue",
               "fontFamily": "Arial",
               "fontSize": 18,
@@ -411,7 +411,7 @@ exports[`Components renders correctly with updated params 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 80,
             "justifyContent": "center",
@@ -420,7 +420,7 @@ exports[`Components renders correctly with updated params 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "blue",
               "fontFamily": "Arial",
               "fontSize": 18,
@@ -432,7 +432,7 @@ exports[`Components renders correctly with updated params 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 80,
             "justifyContent": "center",
@@ -441,7 +441,7 @@ exports[`Components renders correctly with updated params 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "blue",
               "fontFamily": "Arial",
               "fontSize": 18,
@@ -453,7 +453,7 @@ exports[`Components renders correctly with updated params 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 80,
             "justifyContent": "center",
@@ -462,7 +462,7 @@ exports[`Components renders correctly with updated params 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "blue",
               "fontFamily": "Arial",
               "fontSize": 18,
@@ -472,7 +472,7 @@ exports[`Components renders correctly with updated params 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "alignItems": "center",
             "height": 80,
             "justifyContent": "center",
@@ -481,7 +481,7 @@ exports[`Components renders correctly with updated params 1`] = `
       >
         <Text
           style={
-            Object {
+            {
               "color": "blue",
               "fontFamily": "Arial",
               "fontSize": 18,
@@ -494,12 +494,12 @@ exports[`Components renders correctly with updated params 1`] = `
   <View
     pointerEvents="none"
     style={
-      Array [
-        Object {
+      [
+        {
           "position": "absolute",
           "width": "100%",
         },
-        Object {
+        {
           "borderBottomColor": "gray",
           "borderBottomWidth": 1,
           "top": 1,
@@ -509,7 +509,7 @@ exports[`Components renders correctly with updated params 1`] = `
   >
     <BVLinearGradient
       colors={
-        Array [
+        [
           4294967295,
           3875536895,
           3019898879,
@@ -517,24 +517,24 @@ exports[`Components renders correctly with updated params 1`] = `
         ]
       }
       endPoint={
-        Object {
+        {
           "x": 0.5,
           "y": 1,
         }
       }
       locations={null}
       startPoint={
-        Object {
+        {
           "x": 0.5,
           "y": 0,
         }
       }
       style={
-        Array [
-          Object {
+        [
+          {
             "width": "100%",
           },
-          Object {
+          {
             "height": 160,
           },
         ]
@@ -544,12 +544,12 @@ exports[`Components renders correctly with updated params 1`] = `
   <View
     pointerEvents="none"
     style={
-      Array [
-        Object {
+      [
+        {
           "position": "absolute",
           "width": "100%",
         },
-        Object {
+        {
           "borderTopColor": "gray",
           "borderTopWidth": 1,
           "bottom": 0,
@@ -559,7 +559,7 @@ exports[`Components renders correctly with updated params 1`] = `
   >
     <BVLinearGradient
       colors={
-        Array [
+        [
           2164260863,
           3019898879,
           3875536895,
@@ -567,24 +567,24 @@ exports[`Components renders correctly with updated params 1`] = `
         ]
       }
       endPoint={
-        Object {
+        {
           "x": 0.5,
           "y": 1,
         }
       }
       locations={null}
       startPoint={
-        Object {
+        {
           "x": 0.5,
           "y": 0,
         }
       }
       style={
-        Array [
-          Object {
+        [
+          {
             "width": "100%",
           },
-          Object {
+          {
             "height": 160,
           },
         ]
@@ -597,7 +597,7 @@ exports[`Components renders correctly with updated params 1`] = `
 exports[`Components renders correctly with updated params 2`] = `
 <View
   style={
-    Object {
+    {
       "alignItems": "center",
       "height": 40,
       "justifyContent": "center",
@@ -606,7 +606,7 @@ exports[`Components renders correctly with updated params 2`] = `
 >
   <Text
     style={
-      Object {
+      {
         "color": "green",
         "fontFamily": "Arial",
         "fontSize": 22,
