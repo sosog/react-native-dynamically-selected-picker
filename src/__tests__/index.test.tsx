@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import DynamicallySelectedPicker from '../DynamicallySelectedPicker';
+import DynamicallySelectedPicker from '../components/DynamicallySelectedPicker';
 import DynamicallySelectedPickerListItem from '../DynamicallySelectedPickerListItem';
 
 it('Components renders correctly with defaults', () => {
