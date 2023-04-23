@@ -1,2 +1,2 @@
-import DynamicallySelectedPicker from './DynamicallySelectedPicker';
+import DynamicallySelectedPicker from './components/DynamicallySelectedPicker';
 export default DynamicallySelectedPicker;
