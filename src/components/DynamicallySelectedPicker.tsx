@@ -186,7 +186,7 @@ export default function DynamicallySelectedPicker({
         style={[
           styles.gradientWrapper,
           {
-            top: border.topWidth,
+            top: position.top,
             borderBottomWidth: border.bottomWidth,
             borderBottomColor: selectedItemBorderColor,
           },
