@@ -79,3 +79,10 @@ it('Components renders correctly with updated params', () => {
     .toJSON();
   expect(DynamicallySelectedPickerListItemWrapper).toMatchSnapshot();
 });
+
+it('Components renders correctly with gradient disabled', () => {
+  const DynamicallySelectedPickerWrapper = renderer
+    .create(<DynamicallySelectedPicker renderGradientOverlay={false} />)
+    .toJSON();
+  expect(DynamicallySelectedPickerWrapper).toMatchSnapshot();
+});

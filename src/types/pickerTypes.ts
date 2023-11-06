@@ -18,6 +18,7 @@ export interface PickerProps {
   selectedItemBorderColor?: string;
   fontSize?: number;
   fontFamily?: string;
+  renderGradientOverlay?: boolean;
   topGradientColors?: Array<string>;
   bottomGradientColors?: Array<string>;
   transparentItemRows?: number;

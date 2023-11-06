@@ -112,5 +112,6 @@ const styles = StyleSheet.create({
 | selectedItemBorderColor          |      '#cecece'       |  `string`  | - |
 | fontSize          |      -       |  `number`  | - |
 | fontFamily          |     'Arial'       |  `string`  | - |
-| topGradientColors | [...] |  `Array<string>`  | See default value in source.
+| renderGradientOverlay | true | `boolean` | Render gradient over outer items. |
+| topGradientColors | [...] |  `Array<string>`  | See default value in source. |
 | bottomGradientColors | [...] |  `Array<string>`  | See default value in source.                                                            |
