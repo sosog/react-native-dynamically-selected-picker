@@ -9,7 +9,7 @@ import {
   NativeSyntheticEvent,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import DynamicallySelectedPickerListItem from '../DynamicallySelectedPickerListItem';
+import DynamicallySelectedPickerListItem from './DynamicallySelectedPickerListItem';
 import type { ListItem, PickerProps } from '../types/pickerTypes';
 
 export default function DynamicallySelectedPicker({
