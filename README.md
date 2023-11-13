@@ -4,7 +4,6 @@ React Native Picker for Android and IOS with dynamically updating selected items
 Idea was taken at [react-native-swipe-picker]( https://github.com/ninio/react-native-swipe-picker
 )
 
-
 ![](README/android.gif)
 ![](README/ios.gif)
 
@@ -14,13 +13,13 @@ Idea was taken at [react-native-swipe-picker]( https://github.com/ninio/react-na
 
 or
 
-`npm i react-native-dynamically-selected-picker react-native-linear-gradient --safe`
+`npm i react-native-dynamically-selected-picker react-native-linear-gradient --save`
 
 Then, if you didn't install `react-native-linear-gradient` before: Enter command `cd /ios` and `pod install`. Now you can run project
 
-#Basic usage
+## Basic usage
 
-```
+```javascript
 import React, { useState } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
 
 ```
 
-## Properties
+## Properties (All are optional)
 
 | Prop           |     Default     |   Type   | Description                                                                                                 |
 | :------------- | :-------------: | :------: | :---------------------------------------------------------------------------------------------------------- |
@@ -112,6 +111,7 @@ const styles = StyleSheet.create({
 | selectedItemBorderColor          |      '#cecece'       |  `string`  | - |
 | fontSize          |      -       |  `number`  | - |
 | fontFamily          |     'Arial'       |  `string`  | - |
+| renderItem | - | `func` | Custom render function for each item. Passed in `PickerListItemProps` See source for a working example.
 | renderGradientOverlay | true | `boolean` | Render gradient over outer items. |
 | topGradientColors | [...] |  `Array<string>`  | See default value in source. |
 | bottomGradientColors | [...] |  `Array<string>`  | See default value in source.                                                            |
