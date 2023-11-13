@@ -4,13 +4,14 @@ export type ListItem = {
   itemColor?: string;
 };
 
-export interface PickerProps {
-  items?: Array<ListItem>;
+export interface PickerProps<ItemT extends ListItem> {
+  items?: Array<ItemT>;
   onScroll?: ({ index }: { index: number }) => void;
   onMomentumScrollBegin?: ({ index }: { index: number }) => void;
   onMomentumScrollEnd?: ({ index }: { index: number }) => void;
   onScrollBeginDrag?: ({ index }: { index: number }) => void;
   onScrollEndDrag?: ({ index }: { index: number }) => void;
+  renderItem?: ({}: PickerListItemProps<ItemT>) => JSX.Element;
   initialSelectedIndex?: number;
   height?: number;
   width?: number;
@@ -24,9 +25,10 @@ export interface PickerProps {
   transparentItemRows?: number;
 }
 
-export interface PickerListItemProps {
-  label: string;
-  itemColor?: string;
+export interface PickerListItemProps<ItemT extends ListItem> {
+  key: number;
+  item: ItemT;
+  isSelected: boolean;
   allItemsColor: string;
   fontSize: number;
   height: number;
