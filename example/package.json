@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.72.6",
-    "react-native-dynamically-selected-picker": "^3.0.2",
+    "react-native-dynamically-selected-picker": "link:../src",
     "react-native-linear-gradient": "^2.8.3"
   },
   "devDependencies": {
