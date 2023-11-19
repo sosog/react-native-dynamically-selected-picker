@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-## Properties
+## Properties (All are optional)
 
 | Prop           |     Default     |   Type   | Description                                                                                                 |
 | :------------- | :-------------: | :------: | :---------------------------------------------------------------------------------------------------------- |
@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
 | selectedItemBorderColor          |      '#cecece'       |  `string`  | - |
 | fontSize          |      -       |  `number`  | - |
 | fontFamily          |     'Arial'       |  `string`  | - |
+| renderItem | - | `func` | Custom render function for each item. Passed in `PickerListItemProps` See source for a working example. |
 | renderGradientOverlay | true | `boolean` | Render gradient over outer items. |
 | topGradientColors | [...] |  `Array<string>`  | See default value in source. |
 | bottomGradientColors | [...] |  `Array<string>`  | See default value in source. |
