@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 
 import DynamicallySelectedPicker from '../components/DynamicallySelectedPicker';
 import DynamicallySelectedPickerListItem from '../components/DynamicallySelectedPickerListItem';
+import { ListItem } from 'src/types/pickerTypes';
 
 it('Components renders correctly with defaults', () => {
   const DynamicallySelectedPickerWrapper = renderer
@@ -10,11 +11,19 @@ it('Components renders correctly with defaults', () => {
     .toJSON();
   expect(DynamicallySelectedPickerWrapper).toMatchSnapshot();
 
+  const item: ListItem = {
+    label: 'Item',
+    value: 1,
+    itemColor: 'white',
+  };
+
   const DynamicallySelectedPickerListItemWrapper = renderer
     .create(
       <DynamicallySelectedPickerListItem
-        label={'Item'}
-        itemColor={'white'}
+        item={item}
+        key={1}
+        fakeItem={false}
+        isSelected={false}
         allItemsColor={'black'}
         fontSize={14}
         height={30}
@@ -65,11 +74,19 @@ it('Components renders correctly with updated params', () => {
     .toJSON();
   expect(DynamicallySelectedPickerWrapper).toMatchSnapshot();
 
+  const item: ListItem = {
+    label: 'Item label',
+    value: 1,
+    itemColor: 'green',
+  };
+
   const DynamicallySelectedPickerListItemWrapper = renderer
     .create(
       <DynamicallySelectedPickerListItem
-        label={'Item label'}
-        itemColor={'green'}
+        item={item}
+        key={1}
+        fakeItem={false}
+        isSelected={false}
         allItemsColor={'pink'}
         fontSize={22}
         height={40}

@@ -1,30 +1,31 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import type { PickerListItemProps } from '../types/pickerTypes';
+import type { ListItem, PickerListItemProps } from '../types/pickerTypes';
 
-export default function DynamicallySelectedPickerListItem({
-  label,
-  itemColor,
+export default function DynamicallySelectedPickerListItem<
+  ItemT extends ListItem,
+>({
+  item,
   allItemsColor,
   fontSize,
   height,
   fontFamily = 'Arial',
-}: PickerListItemProps) {
+}: PickerListItemProps<ItemT>) {
   return (
     <View
       style={{
         ...styles.viewWrapper,
-        height,
+        height: height,
       }}
     >
       <Text
         style={{
           fontSize: fontSize,
-          color: itemColor ? itemColor : allItemsColor,
+          color: item.itemColor ? item.itemColor : allItemsColor,
           fontFamily: fontFamily,
         }}
       >
-        {label}
+        {item.label}
       </Text>
     </View>
   );
