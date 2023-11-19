@@ -34,7 +34,8 @@
     "release": "release-it",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn install && yarn example pods",
-    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build",
+    "clean:all": "yarn clean && rm -rf node_modules example/node_modules"
   },
   "keywords": [
     "react-native",
@@ -102,7 +103,7 @@
   "engines": {
     "node": ">= 18.15.0"
   },
-  "packageManager": "^yarn@1.22.15",
+  "packageManager": "yarn@1.22.15",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
