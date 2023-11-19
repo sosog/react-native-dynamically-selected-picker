@@ -27,6 +27,7 @@ export default function DynamicallySelectedPicker({
   fontFamily = 'Arial',
   fontSize,
   selectedItemBorderColor = '#cecece',
+  renderGradientOverlay = true,
   topGradientColors = [
     'rgba( 255, 255, 255, 1 )',
     'rgba( 255, 255, 255, 0.9 )',
@@ -182,46 +183,54 @@ export default function DynamicallySelectedPicker({
           );
         })}
       </ScrollView>
+      {renderGradientOverlay && (
+        <LinearGradient
+          colors={topGradientColors}
+          style={[
+            styles.gradientWrapper,
+            {
+              top: position.top,
+              height: transparentItemRows * itemHeight,
+            },
+          ]}
+          pointerEvents="none"
+        />
+      )}
       <View
         style={[
           styles.gradientWrapper,
           {
-            top: position.top,
+            top: transparentItemRows * itemHeight,
             borderBottomWidth: border.bottomWidth,
             borderBottomColor: selectedItemBorderColor,
           },
         ]}
         pointerEvents="none"
-      >
+      />
+      {renderGradientOverlay && (
         <LinearGradient
-          colors={topGradientColors}
+          colors={bottomGradientColors}
           style={[
-            styles.pickerGradient,
+            styles.gradientWrapper,
             {
+              bottom: position.bottom,
               height: transparentItemRows * itemHeight,
             },
           ]}
+          pointerEvents="none"
         />
-      </View>
+      )}
       <View
         style={[
           styles.gradientWrapper,
           {
-            bottom: position.bottom,
+            bottom: transparentItemRows * itemHeight,
             borderTopWidth: border.topWidth,
             borderTopColor: selectedItemBorderColor,
           },
         ]}
         pointerEvents="none"
-      >
-        <LinearGradient
-          colors={bottomGradientColors}
-          style={[
-            styles.pickerGradient,
-            { height: transparentItemRows * itemHeight },
-          ]}
-        />
-      </View>
+      />
     </View>
   );
 }

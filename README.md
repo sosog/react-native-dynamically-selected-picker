@@ -14,13 +14,13 @@ Idea was taken at [react-native-swipe-picker]( https://github.com/ninio/react-na
 
 or
 
-`npm i react-native-dynamically-selected-picker react-native-linear-gradient --safe`
+`npm i react-native-dynamically-selected-picker react-native-linear-gradient --save`
 
 Then, if you didn't install `react-native-linear-gradient` before: Enter command `cd /ios` and `pod install`. Now you can run project
 
 #Basic usage
 
-```
+```javascript
 import React, { useState } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
@@ -91,14 +91,13 @@ const styles = StyleSheet.create({
   },
   selectedItemWrapper: { marginTop: 50 },
 });
-
 ```
 
 ## Properties
 
 | Prop           |     Default     |   Type   | Description                                                                                                 |
 | :------------- | :-------------: | :------: | :---------------------------------------------------------------------------------------------------------- |
-| items     |     [{value: 0, label: 'No items', itemColor: 'black'}]       |  `Array<object>` | - |
+| items     |     [{value: 0, label: 'No items', itemColor: 'red'}]       |  `Array<object>` | - |
 | onScroll     |      -       |  `func` | Returns selected selected index  |
 | onMomentumScrollBegin     |      -       |  `func` | Returns selected selected index  |
 | onMomentumScrollEnd     |      -       |  `func` | Returns selected selected index  |
@@ -112,5 +111,6 @@ const styles = StyleSheet.create({
 | selectedItemBorderColor          |      '#cecece'       |  `string`  | - |
 | fontSize          |      -       |  `number`  | - |
 | fontFamily          |     'Arial'       |  `string`  | - |
-| topGradientColors | [...] |  `Array<string>`  | See default value in source.
-| bottomGradientColors | [...] |  `Array<string>`  | See default value in source.                                                            |
+| renderGradientOverlay | true | `boolean` | Render gradient over outer items. |
+| topGradientColors | [...] |  `Array<string>`  | See default value in source. |
+| bottomGradientColors | [...] |  `Array<string>`  | See default value in source. |
