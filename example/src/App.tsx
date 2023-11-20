@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
 import DynamicallySelectedPicker from 'react-native-dynamically-selected-picker';
+import CustomPickerListItem from './components/CustomPickerListItem';
 
 export default function App() {
   const [selectedItemIndex, setSelectedItemIndex] = useState<number>(0);
+  const [selectedCustomItemIndex, setSelectedCustomItemIndex] =
+    useState<number>(0);
+
   const initialSelectedIndex = 1;
   const windowWidth = Dimensions.get('window').width;
   const height = 300;
@@ -47,6 +51,40 @@ export default function App() {
       <View style={styles.selectedItemWrapper}>
         <Text>Selected item index {selectedItemIndex}</Text>
       </View>
+
+      <View style={styles.selectedItemWrapper}>
+        <Text>Example of custom rendering</Text>
+        <Text>(Selected item index {selectedCustomItemIndex})</Text>
+      </View>
+
+      <DynamicallySelectedPicker
+        items={[
+          {
+            value: 1,
+            label: 'Red',
+            boxColour: 'red',
+          },
+          {
+            value: 2,
+            label: 'Green',
+            boxColour: 'green',
+          },
+          {
+            value: 3,
+            label: 'Blue',
+            boxColour: 'blue',
+          },
+        ]}
+        renderItem={CustomPickerListItem}
+        onScroll={({ index }) => setSelectedCustomItemIndex(index)}
+        onMomentumScrollBegin={({ index }) => setSelectedCustomItemIndex(index)}
+        onMomentumScrollEnd={({ index }) => setSelectedCustomItemIndex(index)}
+        onScrollBeginDrag={({ index }) => setSelectedCustomItemIndex(index)}
+        onScrollEndDrag={({ index }) => setSelectedCustomItemIndex(index)}
+        height={214}
+        width={windowWidth}
+        transparentItemRows={2}
+      />
     </View>
   );
 }
@@ -67,5 +105,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
   },
-  selectedItemWrapper: { marginTop: 50 },
+  selectedItemWrapper: {
+    alignItems: 'center',
+    marginTop: 25,
+  },
 });
