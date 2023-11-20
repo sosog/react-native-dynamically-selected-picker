@@ -12,13 +12,22 @@ import LinearGradient from 'react-native-linear-gradient';
 import DynamicallySelectedPickerListItem from './DynamicallySelectedPickerListItem';
 import type { ListItem, PickerProps } from '../types/pickerTypes';
 
-export default function DynamicallySelectedPicker({
-  items = [{ value: 0, label: 'No items', itemColor: 'red' }],
+const itemDefaults: Array<ListItem> = [
+  {
+    label: 'No items',
+    value: 0,
+    itemColor: 'red',
+  },
+];
+
+export default function DynamicallySelectedPicker<ItemT extends ListItem>({
+  items = itemDefaults as unknown as Array<ItemT>,
   onScroll,
   onScrollBeginDrag,
   onScrollEndDrag,
   onMomentumScrollBegin,
   onMomentumScrollEnd,
+  renderItem = DynamicallySelectedPickerListItem,
   width = 300,
   height = 300,
   initialSelectedIndex = 0,
@@ -27,6 +36,7 @@ export default function DynamicallySelectedPicker({
   fontFamily = 'Arial',
   fontSize,
   selectedItemBorderColor = '#cecece',
+  renderGradientOverlay = true,
   topGradientColors = [
     'rgba( 255, 255, 255, 1 )',
     'rgba( 255, 255, 255, 0.9 )',
@@ -39,7 +49,7 @@ export default function DynamicallySelectedPicker({
     'rgba( 255, 255, 255, 0.9 )',
     'rgba( 255, 255, 255, 1 )',
   ],
-}: PickerProps) {
+}: PickerProps<ItemT>) {
   let itemHeightInitial = height / (transparentItemRows * 2 + 1);
   if (Platform.OS === 'ios') {
     itemHeightInitial = Math.ceil(itemHeightInitial);
@@ -55,15 +65,16 @@ export default function DynamicallySelectedPicker({
     });
   };
 
-  function fakeItems(n = 3) {
+  function fakeItems(n = 3): Array<ItemT> {
     const itemsArr = [];
     for (let i = 0; i < n; i++) {
       itemsArr[i] = {
         value: -1,
         label: '',
+        fakeItem: true,
       };
     }
-    return itemsArr;
+    return itemsArr as Array<ItemT>;
   }
 
   function allItemsLength() {
@@ -135,7 +146,7 @@ export default function DynamicallySelectedPicker({
     return Math.round(event.nativeEvent.contentOffset.y / itemHeight);
   }
 
-  function extendedItems() {
+  function extendedItems(): Array<ItemT> {
     return [
       ...fakeItems(transparentItemRows),
       ...items,
@@ -153,6 +164,8 @@ export default function DynamicallySelectedPicker({
     bottomWidth: 1,
   };
 
+  const PickerListItem = renderItem;
+
   return (
     <View style={{ height, width }}>
       <ScrollView
@@ -168,12 +181,13 @@ export default function DynamicallySelectedPicker({
         scrollEventThrottle={20}
         snapToInterval={itemHeight}
       >
-        {extendedItems().map((item: ListItem, index) => {
+        {extendedItems().map((item: ItemT, index) => {
           return (
-            <DynamicallySelectedPickerListItem
+            <PickerListItem
               key={index}
-              label={item.label}
-              itemColor={item.itemColor}
+              item={item}
+              fakeItem={item.fakeItem ? item.fakeItem : false}
+              isSelected={itemIndex + transparentItemRows === index}
               allItemsColor={allItemsColor}
               fontSize={fontSize ? fontSize : itemHeight / 2}
               fontFamily={fontFamily}
@@ -182,46 +196,54 @@ export default function DynamicallySelectedPicker({
           );
         })}
       </ScrollView>
+      {renderGradientOverlay && (
+        <LinearGradient
+          colors={topGradientColors}
+          style={[
+            styles.gradientWrapper,
+            {
+              top: position.top,
+              height: transparentItemRows * itemHeight,
+            },
+          ]}
+          pointerEvents="none"
+        />
+      )}
       <View
         style={[
           styles.gradientWrapper,
           {
-            top: position.top,
+            top: transparentItemRows * itemHeight,
             borderBottomWidth: border.bottomWidth,
             borderBottomColor: selectedItemBorderColor,
           },
         ]}
         pointerEvents="none"
-      >
+      />
+      {renderGradientOverlay && (
         <LinearGradient
-          colors={topGradientColors}
+          colors={bottomGradientColors}
           style={[
-            styles.pickerGradient,
+            styles.gradientWrapper,
             {
+              bottom: position.bottom,
               height: transparentItemRows * itemHeight,
             },
           ]}
+          pointerEvents="none"
         />
-      </View>
+      )}
       <View
         style={[
           styles.gradientWrapper,
           {
-            bottom: position.bottom,
+            bottom: transparentItemRows * itemHeight,
             borderTopWidth: border.topWidth,
             borderTopColor: selectedItemBorderColor,
           },
         ]}
         pointerEvents="none"
-      >
-        <LinearGradient
-          colors={bottomGradientColors}
-          style={[
-            styles.pickerGradient,
-            { height: transparentItemRows * itemHeight },
-          ]}
-        />
-      </View>
+      />
     </View>
   );
 }
@@ -233,9 +255,6 @@ const styles = StyleSheet.create({
   },
   gradientWrapper: {
     position: 'absolute',
-    width: '100%',
-  },
-  pickerGradient: {
     width: '100%',
   },
 });

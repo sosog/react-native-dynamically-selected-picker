@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components renders correctly with defaults 1`] = `
+exports[`Component renders correctly with gradient disabled 1`] = `
 <View
   style={
     {
@@ -170,45 +170,11 @@ exports[`Components renders correctly with defaults 1`] = `
         {
           "borderBottomColor": "#cecece",
           "borderBottomWidth": 1,
-          "top": 0,
+          "top": 129,
         },
       ]
     }
-  >
-    <BVLinearGradient
-      colors={
-        [
-          4294967295,
-          3875536895,
-          3019898879,
-          2164260863,
-        ]
-      }
-      endPoint={
-        {
-          "x": 0.5,
-          "y": 1,
-        }
-      }
-      locations={null}
-      startPoint={
-        {
-          "x": 0.5,
-          "y": 0,
-        }
-      }
-      style={
-        [
-          {
-            "width": "100%",
-          },
-          {
-            "height": 129,
-          },
-        ]
-      }
-    />
-  </View>
+  />
   <View
     pointerEvents="none"
     style={
@@ -220,45 +186,277 @@ exports[`Components renders correctly with defaults 1`] = `
         {
           "borderTopColor": "#cecece",
           "borderTopWidth": 1,
-          "bottom": 0,
+          "bottom": 129,
         },
       ]
     }
+  />
+</View>
+`;
+
+exports[`Components renders correctly with defaults 1`] = `
+<View
+  style={
+    {
+      "height": 300,
+      "width": 300,
+    }
+  }
+>
+  <RCTScrollView
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    scrollEventThrottle={20}
+    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
+    snapToInterval={43}
   >
-    <BVLinearGradient
-      colors={
-        [
-          2164260863,
-          3019898879,
-          3875536895,
-          4294967295,
-        ]
-      }
-      endPoint={
-        {
-          "x": 0.5,
-          "y": 1,
-        }
-      }
-      locations={null}
-      startPoint={
-        {
-          "x": 0.5,
-          "y": 0,
-        }
-      }
-      style={
-        [
+    <View>
+      <View
+        style={
           {
-            "width": "100%",
-          },
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
           {
-            "height": 129,
-          },
-        ]
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "red",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        >
+          No items
+        </Text>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "height": 43,
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontFamily": "Arial",
+              "fontSize": 21.5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTScrollView>
+  <BVLinearGradient
+    colors={
+      [
+        4294967295,
+        3875536895,
+        3019898879,
+        2164260863,
+      ]
+    }
+    endPoint={
+      {
+        "x": 0.5,
+        "y": 1,
       }
-    />
-  </View>
+    }
+    locations={null}
+    pointerEvents="none"
+    startPoint={
+      {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
+    style={
+      [
+        {
+          "position": "absolute",
+          "width": "100%",
+        },
+        {
+          "height": 129,
+          "top": 0,
+        },
+      ]
+    }
+  />
+  <View
+    pointerEvents="none"
+    style={
+      [
+        {
+          "position": "absolute",
+          "width": "100%",
+        },
+        {
+          "borderBottomColor": "#cecece",
+          "borderBottomWidth": 1,
+          "top": 129,
+        },
+      ]
+    }
+  />
+  <BVLinearGradient
+    colors={
+      [
+        2164260863,
+        3019898879,
+        3875536895,
+        4294967295,
+      ]
+    }
+    endPoint={
+      {
+        "x": 0.5,
+        "y": 1,
+      }
+    }
+    locations={null}
+    pointerEvents="none"
+    startPoint={
+      {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
+    style={
+      [
+        {
+          "position": "absolute",
+          "width": "100%",
+        },
+        {
+          "bottom": 0,
+          "height": 129,
+        },
+      ]
+    }
+  />
+  <View
+    pointerEvents="none"
+    style={
+      [
+        {
+          "position": "absolute",
+          "width": "100%",
+        },
+        {
+          "borderTopColor": "#cecece",
+          "borderTopWidth": 1,
+          "bottom": 129,
+        },
+      ]
+    }
+  />
 </View>
 `;
 
@@ -491,6 +689,42 @@ exports[`Components renders correctly with updated params 1`] = `
       </View>
     </View>
   </RCTScrollView>
+  <BVLinearGradient
+    colors={
+      [
+        4294967295,
+        3875536895,
+        3019898879,
+        2164260863,
+      ]
+    }
+    endPoint={
+      {
+        "x": 0.5,
+        "y": 1,
+      }
+    }
+    locations={null}
+    pointerEvents="none"
+    startPoint={
+      {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
+    style={
+      [
+        {
+          "position": "absolute",
+          "width": "100%",
+        },
+        {
+          "height": 160,
+          "top": 0,
+        },
+      ]
+    }
+  />
   <View
     pointerEvents="none"
     style={
@@ -502,45 +736,47 @@ exports[`Components renders correctly with updated params 1`] = `
         {
           "borderBottomColor": "gray",
           "borderBottomWidth": 1,
-          "top": 0,
+          "top": 160,
         },
       ]
     }
-  >
-    <BVLinearGradient
-      colors={
-        [
-          4294967295,
-          3875536895,
-          3019898879,
-          2164260863,
-        ]
+  />
+  <BVLinearGradient
+    colors={
+      [
+        2164260863,
+        3019898879,
+        3875536895,
+        4294967295,
+      ]
+    }
+    endPoint={
+      {
+        "x": 0.5,
+        "y": 1,
       }
-      endPoint={
+    }
+    locations={null}
+    pointerEvents="none"
+    startPoint={
+      {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
+    style={
+      [
         {
-          "x": 0.5,
-          "y": 1,
-        }
-      }
-      locations={null}
-      startPoint={
+          "position": "absolute",
+          "width": "100%",
+        },
         {
-          "x": 0.5,
-          "y": 0,
-        }
-      }
-      style={
-        [
-          {
-            "width": "100%",
-          },
-          {
-            "height": 160,
-          },
-        ]
-      }
-    />
-  </View>
+          "bottom": 0,
+          "height": 160,
+        },
+      ]
+    }
+  />
   <View
     pointerEvents="none"
     style={
@@ -552,45 +788,11 @@ exports[`Components renders correctly with updated params 1`] = `
         {
           "borderTopColor": "gray",
           "borderTopWidth": 1,
-          "bottom": 0,
+          "bottom": 160,
         },
       ]
     }
-  >
-    <BVLinearGradient
-      colors={
-        [
-          2164260863,
-          3019898879,
-          3875536895,
-          4294967295,
-        ]
-      }
-      endPoint={
-        {
-          "x": 0.5,
-          "y": 1,
-        }
-      }
-      locations={null}
-      startPoint={
-        {
-          "x": 0.5,
-          "y": 0,
-        }
-      }
-      style={
-        [
-          {
-            "width": "100%",
-          },
-          {
-            "height": 160,
-          },
-        ]
-      }
-    />
-  </View>
+  />
 </View>
 `;
 
