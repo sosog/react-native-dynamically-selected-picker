@@ -10,9 +10,9 @@
   "files": [
     "src",
     "lib",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
+    "!/__tests__",
+    "!/__fixtures__",
+    "!/__mocks__",
     "android",
     "ios",
     "cpp",
