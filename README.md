@@ -8,7 +8,7 @@ Idea was taken at [react-native-swipe-picker]( https://github.com/ninio/react-na
 ![](README/android.gif)
 ![](README/ios.gif)
 
-## installation
+## Installation
 
 `yarn add react-native-dynamically-selected-picker react-native-linear-gradient`
 
@@ -18,7 +18,7 @@ or
 
 Then, if you didn't install `react-native-linear-gradient` before: Enter command `cd /ios` and `pod install`. Now you can run project
 
-#Basic usage
+## Basic usage
 
 ```javascript
 import React, { useState } from 'react';
@@ -80,16 +80,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  selectedItemWrapper: {
+    marginTop: 50
   },
-  gradientWrapper: {
-    position: 'absolute',
-    width: '100%',
-  },
-  selectedItemWrapper: { marginTop: 50 },
 });
 ```
 
