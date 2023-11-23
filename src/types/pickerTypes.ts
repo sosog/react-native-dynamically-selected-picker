@@ -16,6 +16,7 @@ export interface PickerProps<ItemT extends ListItem> {
   initialSelectedIndex?: number;
   height?: number;
   width?: number;
+  horizontal?: boolean;
   allItemsColor?: string;
   selectedItemBorderColor?: string;
   fontSize?: number;
@@ -33,6 +34,7 @@ export interface PickerListItemProps<ItemT extends ListItem> {
   isSelected: boolean;
   allItemsColor: string;
   fontSize: number;
+  horizontal: boolean;
   height: number;
   fontFamily: string;
 }

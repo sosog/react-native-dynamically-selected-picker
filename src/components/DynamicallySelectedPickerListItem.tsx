@@ -8,15 +8,17 @@ export default function DynamicallySelectedPickerListItem<
   item,
   allItemsColor,
   fontSize,
+  horizontal,
   height,
   fontFamily = 'Arial',
 }: PickerListItemProps<ItemT>) {
   return (
     <View
-      style={{
-        ...styles.viewWrapper,
-        height: height,
-      }}
+      style={
+        horizontal
+          ? { ...styles.viewWrapper, width: height }
+          : { ...styles.viewWrapper, height: height }
+      }
     >
       <Text
         style={{
