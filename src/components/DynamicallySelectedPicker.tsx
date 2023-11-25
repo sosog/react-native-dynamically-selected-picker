@@ -4,7 +4,6 @@ import {
   StyleSheet,
   View,
   ScrollView,
-  Platform,
   NativeScrollEvent,
   NativeSyntheticEvent,
 } from 'react-native';
@@ -51,21 +50,21 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
     'rgba( 255, 255, 255, 1 )',
   ],
 }: PickerProps<ItemT>) {
-  let itemSizeInitial =
-    (horizontal ? width : height) / (transparentItemRows * 2 + 1);
-  if (Platform.OS === 'ios') {
-    itemSizeInitial = Math.ceil(itemSizeInitial);
-  }
-  const [itemSize] = useState<number>(itemSizeInitial);
+  // work out the size of each 'slice' so it fits in the size of the view
+  const itemSize = Math.ceil(
+    (horizontal ? width : height) / (transparentItemRows * 2 + 1)
+  );
+
   const [itemIndex, setItemIndex] = useState<number>(initialSelectedIndex);
 
+  // create a reference to the scroll view so we can control it's fine scroll
   const scrollViewRef = createRef<ScrollView>();
 
   const scrollToInitialPosition = () => {
     scrollViewRef.current?.scrollTo(
       horizontal
-        ? { x: itemSize * initialSelectedIndex }
-        : { y: itemSize * initialSelectedIndex }
+        ? { x: itemSize * initialSelectedIndex, animated: false }
+        : { y: itemSize * initialSelectedIndex, animated: false }
     );
   };
 
@@ -173,6 +172,11 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
     width: 1,
   };
 
+  // calculate the gradient size
+  const gradientSize = Math.round(
+    ((horizontal ? width : height) - itemSize) / 2
+  );
+
   const PickerListItem = renderItem;
 
   return (
@@ -192,7 +196,6 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
         snapToInterval={itemSize}
       >
         {extendedItems().map((item: ItemT, index) => {
-          //return <View />;
           return (
             <PickerListItem
               key={index}
@@ -219,7 +222,7 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
                 styles.gradientHorizontalWrapper,
                 {
                   left: position.left,
-                  width: transparentItemRows * itemSize,
+                  width: gradientSize,
                 },
               ]}
               pointerEvents="none"
@@ -229,7 +232,7 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
             style={[
               styles.gradientHorizontalWrapper,
               {
-                left: transparentItemRows * itemSize,
+                left: gradientSize,
                 borderLeftWidth: border.width,
                 borderLeftColor: selectedItemBorderColor,
               },
@@ -245,7 +248,7 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
                 styles.gradientHorizontalWrapper,
                 {
                   right: position.right,
-                  width: transparentItemRows * itemSize,
+                  width: gradientSize,
                 },
               ]}
               pointerEvents="none"
@@ -255,7 +258,7 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
             style={[
               styles.gradientHorizontalWrapper,
               {
-                right: transparentItemRows * itemSize,
+                right: gradientSize,
                 borderRightWidth: border.width,
                 borderRightColor: selectedItemBorderColor,
               },
@@ -272,7 +275,7 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
                 styles.gradientVerticalWrapper,
                 {
                   top: position.top,
-                  height: transparentItemRows * itemSize,
+                  height: gradientSize,
                 },
               ]}
               pointerEvents="none"
@@ -282,7 +285,7 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
             style={[
               styles.gradientVerticalWrapper,
               {
-                top: transparentItemRows * itemSize,
+                top: gradientSize,
                 borderBottomWidth: border.width,
                 borderBottomColor: selectedItemBorderColor,
               },
@@ -296,7 +299,7 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
                 styles.gradientVerticalWrapper,
                 {
                   bottom: position.bottom,
-                  height: transparentItemRows * itemSize,
+                  height: gradientSize,
                 },
               ]}
               pointerEvents="none"
@@ -306,7 +309,7 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
             style={[
               styles.gradientVerticalWrapper,
               {
-                bottom: transparentItemRows * itemSize,
+                bottom: gradientSize,
                 borderTopWidth: border.width,
                 borderTopColor: selectedItemBorderColor,
               },
