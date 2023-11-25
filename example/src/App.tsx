@@ -5,13 +5,16 @@ import DynamicallySelectedPicker from 'react-native-dynamically-selected-picker'
 import CustomPickerListItem from './components/CustomPickerListItem';
 
 export default function App() {
-  const [selectedItemIndex, setSelectedItemIndex] = useState<number>(0);
+  const initialSelectedIndex = 1;
+  const initialHorizontalSelectedIndex = 3;
+
+  const [selectedItemIndex, setSelectedItemIndex] =
+    useState<number>(initialSelectedIndex);
   const [selectedHorizontalItemIndex, setSelectedHorizontalItemIndex] =
-    useState<number>(0);
+    useState<number>(initialHorizontalSelectedIndex);
   const [selectedCustomItemIndex, setSelectedCustomItemIndex] =
     useState<number>(0);
 
-  const initialSelectedIndex = 1;
   const windowWidth = Dimensions.get('window').width;
 
   return (
@@ -100,7 +103,7 @@ export default function App() {
             onScrollEndDrag={({ index }) =>
               setSelectedHorizontalItemIndex(index)
             }
-            initialSelectedIndex={3}
+            initialSelectedIndex={initialHorizontalSelectedIndex}
             horizontal={true}
             height={30}
             width={windowWidth * 0.666}
