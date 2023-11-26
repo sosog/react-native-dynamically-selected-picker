@@ -4,7 +4,6 @@ import {
   StyleSheet,
   View,
   ScrollView,
-  Platform,
   NativeScrollEvent,
   NativeSyntheticEvent,
 } from 'react-native';
@@ -30,6 +29,7 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
   renderItem = DynamicallySelectedPickerListItem,
   width = 300,
   height = 300,
+  horizontal = false,
   initialSelectedIndex = 0,
   transparentItemRows = 3,
   allItemsColor = '#000',
@@ -50,19 +50,22 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
     'rgba( 255, 255, 255, 1 )',
   ],
 }: PickerProps<ItemT>) {
-  let itemHeightInitial = height / (transparentItemRows * 2 + 1);
-  if (Platform.OS === 'ios') {
-    itemHeightInitial = Math.ceil(itemHeightInitial);
-  }
-  const [itemHeight] = useState<number>(itemHeightInitial);
+  // work out the size of each 'slice' so it fits in the size of the view
+  const itemSize = Math.ceil(
+    (horizontal ? width : height) / (transparentItemRows * 2 + 1)
+  );
+
   const [itemIndex, setItemIndex] = useState<number>(initialSelectedIndex);
 
+  // create a reference to the scroll view so we can control it's fine scroll
   const scrollViewRef = createRef<ScrollView>();
 
   const scrollToInitialPosition = () => {
-    scrollViewRef.current?.scrollTo({
-      y: itemHeight * initialSelectedIndex,
-    });
+    scrollViewRef.current?.scrollTo(
+      horizontal
+        ? { x: itemSize * initialSelectedIndex, animated: false }
+        : { y: itemSize * initialSelectedIndex, animated: false }
+    );
   };
 
   function fakeItems(n = 3): Array<ItemT> {
@@ -143,7 +146,11 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
   }
 
   function getItemIndex(event: NativeSyntheticEvent<NativeScrollEvent>) {
-    return Math.round(event.nativeEvent.contentOffset.y / itemHeight);
+    const offset = horizontal
+      ? event.nativeEvent.contentOffset.x
+      : event.nativeEvent.contentOffset.y;
+
+    return Math.round(offset / itemSize);
   }
 
   function extendedItems(): Array<ItemT> {
@@ -156,13 +163,19 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
 
   const position = {
     top: 0,
+    left: 0,
     bottom: 0,
+    right: 0,
   };
 
   const border = {
-    topWidth: 1,
-    bottomWidth: 1,
+    width: 1,
   };
+
+  // calculate the gradient size
+  const gradientSize = Math.round(
+    ((horizontal ? width : height) - itemSize) / 2
+  );
 
   const PickerListItem = renderItem;
 
@@ -179,7 +192,8 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
         onScrollEndDrag={onScrollEndDragListener}
         onScroll={onScrollListener}
         scrollEventThrottle={20}
-        snapToInterval={itemHeight}
+        horizontal={horizontal}
+        snapToInterval={itemSize}
       >
         {extendedItems().map((item: ItemT, index) => {
           return (
@@ -189,61 +203,121 @@ export default function DynamicallySelectedPicker<ItemT extends ListItem>({
               fakeItem={item.fakeItem ? item.fakeItem : false}
               isSelected={itemIndex + transparentItemRows === index}
               allItemsColor={allItemsColor}
-              fontSize={fontSize ? fontSize : itemHeight / 2}
+              fontSize={fontSize ? fontSize : itemSize / 2}
               fontFamily={fontFamily}
-              height={itemHeight}
+              horizontal={horizontal}
+              height={itemSize}
             />
           );
         })}
       </ScrollView>
-      {renderGradientOverlay && (
-        <LinearGradient
-          colors={topGradientColors}
-          style={[
-            styles.gradientWrapper,
-            {
-              top: position.top,
-              height: transparentItemRows * itemHeight,
-            },
-          ]}
-          pointerEvents="none"
-        />
+      {horizontal ? (
+        <>
+          {renderGradientOverlay && (
+            <LinearGradient
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+              colors={topGradientColors}
+              style={[
+                styles.gradientHorizontalWrapper,
+                {
+                  left: position.left,
+                  width: gradientSize,
+                },
+              ]}
+              pointerEvents="none"
+            />
+          )}
+          <View
+            style={[
+              styles.gradientHorizontalWrapper,
+              {
+                left: gradientSize,
+                borderLeftWidth: border.width,
+                borderLeftColor: selectedItemBorderColor,
+              },
+            ]}
+            pointerEvents="none"
+          />
+          {renderGradientOverlay && (
+            <LinearGradient
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+              colors={bottomGradientColors}
+              style={[
+                styles.gradientHorizontalWrapper,
+                {
+                  right: position.right,
+                  width: gradientSize,
+                },
+              ]}
+              pointerEvents="none"
+            />
+          )}
+          <View
+            style={[
+              styles.gradientHorizontalWrapper,
+              {
+                right: gradientSize,
+                borderRightWidth: border.width,
+                borderRightColor: selectedItemBorderColor,
+              },
+            ]}
+            pointerEvents="none"
+          />
+        </>
+      ) : (
+        <>
+          {renderGradientOverlay && (
+            <LinearGradient
+              colors={topGradientColors}
+              style={[
+                styles.gradientVerticalWrapper,
+                {
+                  top: position.top,
+                  height: gradientSize,
+                },
+              ]}
+              pointerEvents="none"
+            />
+          )}
+          <View
+            style={[
+              styles.gradientVerticalWrapper,
+              {
+                top: gradientSize,
+                borderBottomWidth: border.width,
+                borderBottomColor: selectedItemBorderColor,
+              },
+            ]}
+            pointerEvents="none"
+          />
+          {renderGradientOverlay && (
+            <LinearGradient
+              colors={bottomGradientColors}
+              style={[
+                styles.gradientVerticalWrapper,
+                {
+                  bottom: position.bottom,
+                  height: gradientSize,
+                },
+              ]}
+              pointerEvents="none"
+            />
+          )}
+          <View
+            style={[
+              styles.gradientVerticalWrapper,
+              {
+                bottom: gradientSize,
+                borderTopWidth: border.width,
+                borderTopColor: selectedItemBorderColor,
+              },
+            ]}
+            pointerEvents="none"
+          />
+        </>
       )}
-      <View
-        style={[
-          styles.gradientWrapper,
-          {
-            top: transparentItemRows * itemHeight,
-            borderBottomWidth: border.bottomWidth,
-            borderBottomColor: selectedItemBorderColor,
-          },
-        ]}
-        pointerEvents="none"
-      />
-      {renderGradientOverlay && (
-        <LinearGradient
-          colors={bottomGradientColors}
-          style={[
-            styles.gradientWrapper,
-            {
-              bottom: position.bottom,
-              height: transparentItemRows * itemHeight,
-            },
-          ]}
-          pointerEvents="none"
-        />
-      )}
-      <View
-        style={[
-          styles.gradientWrapper,
-          {
-            bottom: transparentItemRows * itemHeight,
-            borderTopWidth: border.topWidth,
-            borderTopColor: selectedItemBorderColor,
-          },
-        ]}
-        pointerEvents="none"
-      />
     </View>
   );
 }
@@ -253,8 +327,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  gradientWrapper: {
+  gradientVerticalWrapper: {
     position: 'absolute',
     width: '100%',
+  },
+  gradientHorizontalWrapper: {
+    position: 'absolute',
+    height: '100%',
   },
 });

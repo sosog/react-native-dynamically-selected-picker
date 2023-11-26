@@ -4,9 +4,8 @@ React Native Picker for Android and IOS with dynamically updating selected items
 Idea was taken at [react-native-swipe-picker]( https://github.com/ninio/react-native-swipe-picker
 )
 
-
-![](README/android.gif)
-![](README/ios.gif)
+![Android](README/android.gif)
+![Ios](README/ios.gif)
 
 ## Installation
 
@@ -100,6 +99,7 @@ const styles = StyleSheet.create({
 | transparentItemRows   |     3      |  `number`  | Set number of items at top and bottom of selected index.                                                                |
 | width   |     300      |  `number`  | -                                                                |
 | height   |     300      |  `number`  | -                                                                |
+| horizontal | false | `boolean` | If true then a Horizontal picker.|
 | allItemsColor          |      #000       |  `string`  | - |
 | selectedItemBorderColor          |      '#cecece'       |  `string`  | - |
 | fontSize          |      -       |  `number`  | - |
