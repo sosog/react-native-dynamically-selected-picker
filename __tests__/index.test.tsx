@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import DynamicallySelectedPicker from '../src/components/DynamicallySelectedPicker';
 import DynamicallySelectedPickerListItem from '../src/components/DynamicallySelectedPickerListItem';
-import { ListItem } from 'src/types/pickerTypes';
+import type { ListItem } from '../src/types/pickerTypes';
 
 it('Components renders correctly with defaults', () => {
   const DynamicallySelectedPickerWrapper = renderer

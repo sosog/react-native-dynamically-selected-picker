@@ -1,0 +1,13 @@
+pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
+plugins { id("com.facebook.react.settings") }
+extensions.configure(com.facebook.react.ReactSettingsExtension){ ex ->
+    ex.autolinkLibrariesFromCommand(
+        ["/bin/zsh", "-lc", "node ../node_modules/react-native/cli.js config"]
+    )
+}
+rootProject.name = 'example'
+include ':app'
+include ':react-native-linear-gradient'
+project(':react-native-linear-gradient').projectDir =
+    new File(rootProject.projectDir, '../node_modules/react-native-linear-gradient/android')
+includeBuild('../node_modules/@react-native/gradle-plugin')
