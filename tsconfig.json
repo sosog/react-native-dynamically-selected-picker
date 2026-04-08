@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "paths": {
       "react-native-dynamically-selected-picker": ["./src/index"]
     },
@@ -11,7 +10,6 @@
     "jsx": "react",
     "lib": ["esnext"],
     "module": "esnext",
-    "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,
