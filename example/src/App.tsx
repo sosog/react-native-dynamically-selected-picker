@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 
 import DynamicallySelectedPicker from 'react-native-dynamically-selected-picker';
 import CustomPickerListItem from './components/CustomPickerListItem';
@@ -15,7 +15,9 @@ export default function App() {
   const [selectedCustomItemIndex, setSelectedCustomItemIndex] =
     useState<number>(0);
 
-  const windowWidth = Dimensions.get('window').width;
+  // ✅ useWindowDimensions replaces Dimensions.get('window') — reactive to
+  // rotation, foldables, and window resizing in RN 0.84's New Architecture.
+  const { width: windowWidth } = useWindowDimensions();
 
   return (
     <View style={styles.container}>
@@ -26,27 +28,11 @@ export default function App() {
 
       <DynamicallySelectedPicker
         items={[
-          {
-            value: 1,
-            label: 'Item 1',
-          },
-          {
-            value: 2,
-            label: 'Item 2',
-          },
-          {
-            value: 3,
-            label: 'Item 3',
-          },
-          {
-            value: 4,
-            label: 'Item 4',
-            itemColor: 'blue',
-          },
-          {
-            value: 5,
-            label: 'Item 5',
-          },
+          { value: 1, label: 'Item 1' },
+          { value: 2, label: 'Item 2' },
+          { value: 3, label: 'Item 3' },
+          { value: 4, label: 'Item 4', itemColor: 'blue' },
+          { value: 5, label: 'Item 5' },
         ]}
         onScroll={({ index }) => setSelectedItemIndex(index)}
         onMomentumScrollBegin={({ index }) => setSelectedItemIndex(index)}
@@ -69,26 +55,11 @@ export default function App() {
         <View style={styles.horizontalPicker}>
           <DynamicallySelectedPicker
             items={[
-              {
-                value: 1,
-                label: '1',
-              },
-              {
-                value: 2,
-                label: '2',
-              },
-              {
-                value: 3,
-                label: '3',
-              },
-              {
-                value: 4,
-                label: '4',
-              },
-              {
-                value: 5,
-                label: '5',
-              },
+              { value: 1, label: '1' },
+              { value: 2, label: '2' },
+              { value: 3, label: '3' },
+              { value: 4, label: '4' },
+              { value: 5, label: '5' },
             ]}
             onScroll={({ index }) => setSelectedHorizontalItemIndex(index)}
             onMomentumScrollBegin={({ index }) =>
@@ -120,21 +91,9 @@ export default function App() {
 
       <DynamicallySelectedPicker
         items={[
-          {
-            value: 1,
-            label: 'Red',
-            boxColour: 'red',
-          },
-          {
-            value: 2,
-            label: 'Green',
-            boxColour: 'green',
-          },
-          {
-            value: 3,
-            label: 'Blue',
-            boxColour: 'blue',
-          },
+          { value: 1, label: 'Red', boxColour: 'red' },
+          { value: 2, label: 'Green', boxColour: 'green' },
+          { value: 3, label: 'Blue', boxColour: 'blue' },
         ]}
         renderItem={CustomPickerListItem}
         onScroll={({ index }) => setSelectedCustomItemIndex(index)}
@@ -156,7 +115,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
-    fontSize: 16,
   },
   selectedItemWrapper: {
     alignItems: 'center',

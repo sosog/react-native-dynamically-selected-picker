@@ -8,6 +8,7 @@ type CustomListItem = {
   boxColour: string;
 };
 
+
 const CustomPickerListItem = ({
   item,
   fakeItem,
@@ -15,17 +16,10 @@ const CustomPickerListItem = ({
   allItemsColor,
   fontSize,
   height,
-}: PickerListItemProps<CustomListItem>): JSX.Element => {
-  const BOLD = 'bold';
-  const NORMAL = 'normal';
-
+}: PickerListItemProps<CustomListItem>): React.JSX.Element => {
+  const fontWeight = isSelected ? 'bold' : 'normal';
   return (
-    <View
-      style={{
-        ...styles.listItem,
-        height: height,
-      }}
-    >
+    <View style={[styles.listItem, { height }]}>
       {!fakeItem && (
         <>
           <View
@@ -39,11 +33,14 @@ const CustomPickerListItem = ({
             ]}
           />
           <Text
-            style={{
-              fontSize: fontSize,
-              fontWeight: isSelected ? BOLD : NORMAL, // silly linter errors
-              color: allItemsColor,
-            }}
+            style={[
+              styles.listItemText,
+              {
+                fontSize,
+                fontWeight,
+                color: allItemsColor,
+              },
+            ]}
           >
             {item.label}
           </Text>
@@ -61,6 +58,9 @@ const styles = StyleSheet.create({
   },
   listItemBox: {
     marginHorizontal: 8,
+  },
+  listItemText: {
+    // base text styles kept here; dynamic ones applied inline above
   },
 });
 
